@@ -2,95 +2,119 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* Core brand colors */
+    --primary: 246 70% 64%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 246 80% 75%;
+    
+    --secondary: 168 100% 39%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Backgrounds */
+    --background: 240 20% 99%;
+    --foreground: 240 10% 10%;
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 240 10% 10%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
+    --popover-foreground: 240 10% 10%;
+    
+    /* Muted tones */
+    --muted: 240 10% 96%;
+    --muted-foreground: 240 5% 45%;
+    
+    /* UI elements */
+    --border: 240 10% 90%;
+    --input: 240 10% 90%;
+    --ring: 246 70% 64%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --radius: 1rem;
+    
+    /* Skill category colors */
+    --skill-tech: 246 70% 64%;
+    --skill-music: 320 70% 55%;
+    --skill-language: 168 100% 39%;
+    --skill-art: 38 92% 50%;
+    --skill-fitness: 0 85% 60%;
+    --skill-cooking: 25 95% 55%;
+    --skill-business: 200 80% 50%;
+    --skill-other: 280 60% 55%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(246 70% 64%), hsl(280 70% 60%));
+    --gradient-secondary: linear-gradient(135deg, hsl(168 100% 39%), hsl(180 80% 45%));
+    --gradient-hero: linear-gradient(180deg, hsl(240 20% 99%) 0%, hsl(246 40% 96%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(240 20% 99%));
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(240 10% 10% / 0.08);
+    --shadow-md: 0 8px 24px -4px hsl(240 10% 10% / 0.12);
+    --shadow-lg: 0 16px 48px -8px hsl(240 10% 10% / 0.15);
+    --shadow-glow: 0 8px 32px -4px hsl(246 70% 64% / 0.25);
+    --shadow-card: 0 4px 20px -4px hsl(240 10% 10% / 0.08);
+    
+    /* Sidebar */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
+    --sidebar-primary: 246 70% 64%;
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 246 70% 64%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
+    --background: 240 10% 6%;
+    --foreground: 0 0% 98%;
+    
+    --card: 240 10% 10%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 240 10% 10%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 246 70% 64%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 168 100% 39%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 240 10% 15%;
+    --muted-foreground: 240 5% 65%;
+    
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 100%;
+    
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 240 10% 18%;
+    --input: 240 10% 18%;
+    --ring: 246 70% 64%;
+    
+    --gradient-hero: linear-gradient(180deg, hsl(240 10% 6%) 0%, hsl(246 20% 10%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(240 10% 12%), hsl(240 10% 8%));
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary: 246 70% 64%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 246 70% 64%;
   }
 }
 
@@ -100,6 +124,106 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .skill-tag {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200;
+  }
+  
+  .skill-tag-tech {
+    @apply bg-primary/10 text-primary hover:bg-primary/20;
+  }
+  
+  .skill-tag-music {
+    background-color: hsl(var(--skill-music) / 0.1);
+    color: hsl(var(--skill-music));
+  }
+  
+  .skill-tag-language {
+    @apply bg-secondary/10 text-secondary hover:bg-secondary/20;
+  }
+  
+  .skill-tag-art {
+    @apply bg-accent/10 text-accent hover:bg-accent/20;
+  }
+  
+  .skill-tag-fitness {
+    background-color: hsl(var(--skill-fitness) / 0.1);
+    color: hsl(var(--skill-fitness));
+  }
+  
+  .skill-tag-cooking {
+    background-color: hsl(var(--skill-cooking) / 0.1);
+    color: hsl(var(--skill-cooking));
+  }
+  
+  .skill-tag-business {
+    background-color: hsl(var(--skill-business) / 0.1);
+    color: hsl(var(--skill-business));
+  }
+  
+  .match-badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold;
+  }
+  
+  .match-badge-perfect {
+    @apply bg-secondary/10 text-secondary;
+  }
+  
+  .match-badge-teacher {
+    @apply bg-primary/10 text-primary;
+  }
+  
+  .match-badge-learner {
+    @apply bg-accent/10 text-accent;
+  }
+  
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 shadow-card;
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float-delayed {
+    animation: float 6s ease-in-out 2s infinite;
+  }
+  
+  .animate-pulse-soft {
+    animation: pulse-soft 3s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
   }
 }
